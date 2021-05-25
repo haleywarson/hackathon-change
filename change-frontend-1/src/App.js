@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 import "./App.css";
 
@@ -7,7 +7,7 @@ import Goals from "./Components/Goals";
 
 class App extends Component {
   state = {
-    goals: []
+    goals: [],
   };
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class App extends Component {
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          goals: data
+          goals: data,
         })
       );
   }
