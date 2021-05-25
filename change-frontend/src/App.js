@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
+import Goals from "./Components.js/Goals";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gittin it done
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component() {
+
+  state = {
+    goals: []
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:3000/goals")
+    .then(res => res.json())
+    .then(console.log)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/* <Form /> */}
+        <Goals />
+      </div>
+    );
+  }
 }
 
 export default App;
+
