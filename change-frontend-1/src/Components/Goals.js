@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
-export default function Goals() {
+import Goal from "./Goal";
+
+const Goals = (props) => {
+    const renderGoals = () => {
+        return props.goals.map((goal) => 
+            <Goal goal={goal} key={goal.id} />);
+    };
+
     return (
-        <div>
-            
+        <div className="Goals">
+            <ul>{renderGoals()}</ul>
         </div>
-    )
-}
+    );
+    };
+
+export default Goals;
